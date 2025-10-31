@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - SportConnect</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+
+<body class="profile-page">
+  <header>
+        <h1>SportConnect</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/activities">Activities</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/login">Logout</a></li>
+                <li>
+  <div class="theme-container">
+    <button id="theme-toggle" class="theme-toggle-btn">🌒</button>
+  </div>
+  </li>
+            </ul>
+        </nav>
+    </header>
+
+  <main class="profile-container">
+   
+    <section class="profile-header">
+      <img src="images/user_profile.jpg" alt="User Avatar" class="profile-avatar">
+      <h2 class="profile-name"><%= user.fullname %></h2>
+      <p class="profile-bio">Sports enthusiast | Love football, running, and cycling | Always up for a team game!</p>
+      <div class="profile-stats">
+      </div>
+    </section>
+
+    <section class="user-posts">
+      <div class="add-note">
+        <h3>Add a Note</h3>
+        <textarea id="note-input" placeholder="Write something..." rows="3"></textarea>
+        <button id="add-note-btn" class="add-note-btn">Post Note</button>
+      </div>
+      <div class="post">
+        <div class="post-header">
+          <img src="images/user_profile.jpg" alt="<%= user.firstname %> <%= user.lastname %>">
+          <div>
+            <span class="post-user"><%= user.fullname %></span><br>
+            <span class="post-time">1 hour ago</span>
+          </div>
+        </div>
+        <div class="post-content">
+          Just finished a 10km morning run! Feeling great 💪🏃‍♂️
+        </div>
+        <div class="post-actions">
+          <button>Like</button>
+          <button>Comment</button>
+          <button>Share</button>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-header">
+          <img src="images/user_profile.jpg" alt="<%= user.fullname %>">
+          <div>
+            <span class="post-user"><%= user.fullname %></span><br>
+            <span class="post-time">Yesterday</span>
+          </div>
+        </div>
+        <div class="post-content">
+          Played a friendly football match with friends. Great teamwork! ⚽
+        </div>
+        <div class="post-actions">
+          <button>Like</button>
+          <button>Comment</button>
+          <button>Share</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>

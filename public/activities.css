@@ -1,0 +1,243 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+header {
+  background-color: #2c2c2c;
+  color: #28a745;
+  padding: 15px 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 8px;
+    text-align: left;
+    margin-left: 20px;
+    color: #28a745;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 35px;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+nav a:hover,
+nav a.active {
+    color: #28a745;
+}
+
+.activities-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.activities-container h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.activities-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.activity-card {
+  background-color: #2b2b2b;
+  border-radius: 15px;
+  padding: 20px;
+  width: 260px;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+}
+
+.activity-card h3 {
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.activity-card button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.activity-card button:hover {
+  background-color: #43a047;
+}
+
+.activity-card.new {
+  background-color: #2b2b2b;
+  border-radius: 15px;
+  padding: 20px;
+  width: 260px;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.activity-card.new:hover {
+  transform: translateY(-5px);
+}
+
+.activity-card.new h3 {
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.activity-card.new button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.activity-card.new button:hover {
+  background-color: #43a047;
+}
+
+/* === Add Activity Form === */
+.add-activity {
+  background-color: #2b2b2b;
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.add-activity h3 {
+  color: #4caf50;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#add-activity-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#add-activity-form label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+#add-activity-form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+#add-activity-form input:focus {
+  border: 2px solid #4caf50;
+}
+
+.add-activity-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.add-activity-btn:hover {
+  background-color: #43a047;
+}
+
+/* === Light Mode === */
+body.light-mode {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+body.light-mode header {
+  background-color: #f5f5f5;
+  color: #28a745;
+}
+
+body.light-mode nav a {
+  color: #28a745;
+}
+
+body.light-mode .activities-container {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+body.light-mode .add-activity {
+  background-color: #f5f5f5;
+  color: #121212;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .add-activity h3 {
+  color: #28a745;
+}
+
+body.light-mode .activity-card,
+body.light-mode .activity-card.new {
+  background-color: #f5f5f5;
+  color: #121212;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .activity-card h3 {
+  color: #28a745;
+}
+
+body.light-mode .activity-card button,
+body.light-mode .add-activity-btn {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+body.light-mode .activity-card button:hover,
+body.light-mode .add-activity-btn:hover {
+  background-color: #34c759;
+}
+
+body.light-mode #add-activity-form input {
+  background-color: #ffffff;
+  color: #121212;
+  border: 1px solid #ccc;
+}
+

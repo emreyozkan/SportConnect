@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activities - SportConnect</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="activities.css">
+</head>
+<body class="activities-page">
+   <header>
+        <h1>SportConnect</h1>
+        <nav>
+            <ul>
+              <li><a href="/">Home</a></li>
+                <li><a href="/activities">Activities</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/login">Logout</a></li>
+                <li>
+  <div class="theme-container">
+    <button id="theme-toggle" class="theme-toggle-btn">🌒</button>
+  </div>
+  </li>
+            </ul>
+        </nav>
+    </header>
+
+  <main class="activities-container">
+  <h2>Available Activities</h2>
+
+  <section class="add-activity">
+    <h3>Add New Activity</h3>
+    <form id="add-activity-form">
+      <label for="activity-name">Activity Name:</label>
+      <input type="text" id="activity-name" name="activity-name" placeholder="e.g. Volleyball Match" required>
+
+      <label for="activity-date">Date:</label>
+      <input type="date" id="activity-date" name="activity-date" required>
+
+      <label for="activity-location">Location:</label>
+      <input type="text" id="activity-location" name="activity-location" placeholder="e.g. Tilburg Arena" required>
+
+      <label for="activity-spots">Spots Left:</label>
+      <input type="number" id="activity-spots" name="activity-spots" placeholder="e.g. 8" min="1" required>
+
+      <button type="submit" class="add-activity-btn">Add Activity</button>
+    </form>
+  </section>
+
+  <section class="activities-list">
+    <div class="activity-card">
+      <h3>🏀 Basketball Match</h3>
+      <p><strong>Date:</strong> 24 October 2025</p>
+      <p><strong>Location:</strong> Eindhoven Sports Center</p>
+      <p><strong>Spots Left:</strong> 4</p>
+      <button>Join</button>
+    </div>
+
+    <div class="activity-card">
+      <h3>⚽ Football Tournament</h3>
+      <p><strong>Date:</strong> 26 October 2025</p>
+      <p><strong>Location:</strong> Tilburg Park Field</p>
+      <p><strong>Spots Left:</strong> 7</p>
+      <button>Join</button>
+    </div>
+
+    <div class="activity-card">
+      <h3>🏃 Running Group</h3>
+      <p><strong>Date:</strong> 28 October 2025</p>
+      <p><strong>Location:</strong> Eindhoven City Center</p>
+      <p><strong>Spots Left:</strong> 10</p>
+      <button>Join</button>
+    </div>
+
+    <div class="activity-card">
+      <h3>🎾 Tennis Doubles</h3>
+      <p><strong>Date:</strong> 30 October 2025</p>
+      <p><strong>Location:</strong> Tilburg Tennis Club</p>
+      <p><strong>Spots Left:</strong> 6</p>
+      <button>Join</button>
+    </div>
+  </section>
+</main>
+<script src="main.js"></script>
+</body>
+</html>

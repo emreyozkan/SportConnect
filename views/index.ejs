@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SportConnect</h1>
+        <nav>
+            <ul>
+               <li><a href="/">Home</a></li>
+                <li><a href="/activities">Activities</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/login">Logout</a></li>
+                <li>
+                  <div class="theme-container">
+                    <button id="theme-toggle" class="theme-toggle-btn">🌒</button>
+                  </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="home-layout">
+        <aside class="left-sidebar">
+            <section class="suggested-users">
+                <h3>People You May Know</h3>
+                <% suggestedUsers.forEach(user => { %>
+                <div class="user-suggestion">
+                    <img src="<%= user.avatar %>" alt="<%= user.fullname %>">
+                    <div>
+                        <span class="user-name"><%= user.fullname %></span><br>
+                        <small><%= user.bio %></small>
+                    </div>
+                    <button class="add-friend-btn sidebar-btn" data-id="<%= user._id %>">
+                      <% if (user.requestSent) { %>
+                        Request Sent
+                      <% } else if (user.isFriend) { %>
+                        💬 Message
+                      <% } else { %>
+                        Add Friend
+                      <% } %>
+                    </button>
+                </div>
+                <% }) %>
+            </section>
+            <section class="data-analytics">
+                <h3>📊 Data Analytics Overview</h3>
+                <div class="analytics-cards">
+                    <div class="card">
+                        <h4>Total Users</h4>
+                        <p>👥 <%= analytics.totalUsers %></p>
+                    </div>
+                    <div class="card">
+                        <h4>Active Today</h4>
+                        <p>🔥 <%= analytics.activeToday %></p>
+                    </div>
+                    <div class="card">
+                        <h4>Most Popular Activity</h4>
+                        <p>🏃‍♂️ <%= analytics.mostPopularActivity %></p>
+                    </div>
+                </div>
+            </section>
+        </aside>
+
+        <section class="feed">
+            <section class="create-post">
+                <div class="create-post-header">
+                    <img src="<%= user.avatar %>" alt="Profile" class="create-post-avatar">
+                    <textarea placeholder="What's on your mind?" class="create-post-input"></textarea>
+                </div>
+                <div class="create-post-actions">
+                    <button class="post-button">Post</button>
+                </div>
+            </section>
+
+            <section class="post-feed">
+                <% posts.forEach(post => { %>
+                <div class="post">
+                    <div class="post-header">
+                        <img src="<%= post.author.avatar %>" alt="<%= post.author.fullname %>">
+                        <div>
+                            <span class="post-user"><%= post.author.fullname %></span><br>
+                            <span class="post-time"><%= post.createdAt %></span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <%= post.content %>
+                    </div>
+                    <div class="post-actions">
+                        <button>Like</button>
+                        <button>Comment</button>
+                        <button>Share</button>
+                    </div>
+                </div>
+                <% }) %>
+            </section>
+        </section>
+
+        <aside class="right-sidebar">
+            <section class="suggested-activities">
+                <h3>Suggested Activities</h3>
+                <% suggestedActivities.forEach(activity => { %>
+                  <p><%= activity.emoji %> <%= activity.name %> - <%= activity.date %></p>
+                <% }) %>
+            </section>
+
+            <section class="upcoming-events">
+                <h3>Upcoming Events</h3>
+                <% upcomingEvents.forEach(event => { %>
+                  <p><%= event.emoji %> <%= event.name %> - <%= event.timeLeft %></p>
+                <% }) %>
+            </section>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2025 SportConnect</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
